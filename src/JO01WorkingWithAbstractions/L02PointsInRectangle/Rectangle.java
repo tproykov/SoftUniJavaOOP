@@ -11,4 +11,10 @@ public class Rectangle {
     }
 
     public boolean contains(Point point) {
+
+        boolean xIsBetween = point.getX() >= bottomLeft.getX() && point.getX() <= TopRight.getX();
+        boolean yIsBetween = point.getY() >= bottomLeft.getY() && point.getY() <= TopRight.getY();
+
+        return xIsBetween && yIsBetween;
+    }
 }
