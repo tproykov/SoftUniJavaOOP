@@ -21,27 +21,22 @@ public class L01RhombusOfStars {
         }
 
         for (int i = 1; i <= size; i++) {
-            printBlanks(size, i);
-            printRow(i);
+            printRow1(size, i);
             System.out.println();
         }
 
         for (int i = size - 1; i >= 1; i--) {
-            printBlanks(size, i);
-            printRow(i);
+            printRow1(size, i);
             System.out.println();
         }
     }
 
-    private static void printRow(int i) {
-        for (int j = 1; j <= i; j++) {
-            System.out.print("* ");
-        }
-    }
-
-    private static void printBlanks(int size, int i) {
+    private static void printRow1(int size, int i) {
         for (int j = size - i; j >= 1; j--) {
             System.out.print(" ");
+        }
+        for (int j = 1; j <= i; j++) {
+            System.out.print("* ");
         }
     }
 }
