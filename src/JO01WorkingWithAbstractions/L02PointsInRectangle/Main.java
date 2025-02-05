@@ -18,6 +18,14 @@ public class Main {
         int x2 = coordinates[2];
         int y2 = coordinates[3];
 
+        int n = Integer.parseInt(scanner.nextLine());
+
+        for (int i = 0; i < n; i++) {
+            int[] pointCoordinates = Arrays.stream(scanner.nextLine().split(" "))
+                    .mapToInt(Integer::parseInt)
+                    .toArray();
+        }
+
 
     }
 }
