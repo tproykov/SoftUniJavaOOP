@@ -10,12 +10,12 @@ public class Main {
 
         StudentSystem studentSystem = new StudentSystem();
 
-        String command;
-        while (!"Exit".equals(command = scanner.nextLine())) {
+        String input;
+        while (!"Exit".equals(input = scanner.nextLine())) {
 
-            String[] tokens = command.split(" ");
+            String[] command = input.split(" ");
 
-            studentSystem.ParseCommand(tokens);
+            studentSystem.ParseCommand(command);
         }
     }
 }

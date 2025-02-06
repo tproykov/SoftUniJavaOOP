@@ -1,44 +1,39 @@
 package JO01WorkingWithAbstractions.L03StudentSystem;
 
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class StudentSystem {
-    private Map<String, Student> repo;
 
-    public StudentSystem()
-    {
-        this.repo = new HashMap<>();
+    private Map<String, Student> students;
+
+    public StudentSystem() {
+        this.students = new HashMap<>();
     }
 
     public Map<String, Student> getRepo() {
-        return this.repo;
+        return this.students;
     }
 
-    public void ParseCommand(String[]args)
-    {
-//        Scanner scanner = new Scanner(System.in);
-//        String[] args = scanner.nextLine().split(" ");
+    public void ParseCommand(String[] command) {
 
-        if (args[0].equals("Create"))
-        {
-            var name = args[1];
-            var age = Integer.parseInt(args[2]);
-            var grade =Double.parseDouble(args[3]);
-            if (!repo.containsKey(name))
-            {
-                var student = new Student(name, age, grade);
-                repo.put(name,student);
+        if (command[0].equals("Create")) {
+
+            String name = command[1];
+            int age = Integer.parseInt(command[2]);
+            double grade = Double.parseDouble(command[3]);
+
+            if (!students.containsKey(name)) {
+                Student student = new Student(name, age, grade);
+                students.put(name, student);
             }
         }
-        else if (args[0].equals("Show"))
-        {
-            var name = args[1];
-            if (repo.containsKey(name))
+        else if (command[0].equals("Show")) {
+
+            var name = command[1];
+            if (students.containsKey(name))
             {
-                var student = repo.get(name);
+                var student = students.get(name);
                 String view = String.format("%s is %s years old.",student.getName(),student.getAge());
 
                 if (student.getGrade() >= 5.00)
