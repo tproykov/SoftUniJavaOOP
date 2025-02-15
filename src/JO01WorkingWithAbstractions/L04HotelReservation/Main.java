@@ -14,8 +14,6 @@ public class Main {
         Season season = Season.valueOf(input[2]);
         Discount discount = Discount.valueOf(input[3]);
 
-        System.out.println(PriceCalculator.calculatePrice(pricePerDay, numberOfDays, season, discount));
-
-
+        System.out.printf("%.2f", PriceCalculator.calculatePrice(pricePerDay, numberOfDays, season, discount));
     }
 }

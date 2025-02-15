@@ -7,15 +7,6 @@ public class PriceCalculator {
 
         double basePrice = pricePerDay * numberOfDays * season.getMultiplier();
 
-
-
-
         return basePrice - (basePrice * discount.getPercentage());
-
-
-
-
     }
-
-
 }
