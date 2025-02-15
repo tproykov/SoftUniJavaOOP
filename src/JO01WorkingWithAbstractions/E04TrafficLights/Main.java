@@ -1,5 +1,6 @@
 package JO01WorkingWithAbstractions.E04TrafficLights;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -8,6 +9,15 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        Signal[] signals = Arrays.stream(scanner.nextLine().split("\\s+"))
+                .map(Signal::valueOf)
+                .toArray(Signal[]::new);
 
+        int n = Integer.parseInt(scanner.nextLine());
+
+        for (int i = 1; i <= n; i++) {
+            Signal.updateSignal(signals);
+            Signal.printSignals(signals);
+        }
     }
 }
