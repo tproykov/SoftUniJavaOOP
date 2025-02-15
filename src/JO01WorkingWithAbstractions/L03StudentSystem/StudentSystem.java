@@ -11,10 +11,6 @@ public class StudentSystem {
         this.students = new HashMap<>();
     }
 
-    public Map<String, Student> getRepo() {
-        return this.students;
-    }
-
     public void ParseCommand(String[] command) {
 
         if (command[0].equals("Create")) {
@@ -30,22 +26,20 @@ public class StudentSystem {
         }
         else if (command[0].equals("Show")) {
 
-            var name = command[1];
-            if (students.containsKey(name))
-            {
-                var student = students.get(name);
+            String name = command[1];
+            if (students.containsKey(name)) {
+
+                Student student = students.get(name);
+
                 String view = String.format("%s is %s years old.",student.getName(),student.getAge());
 
-                if (student.getGrade() >= 5.00)
-                {
+                if (student.getGrade() >= 5.00) {
                     view += " Excellent student.";
                 }
-                else if (student.getGrade() < 5.00 && student.getGrade() >= 3.50)
-                {
+                else if (student.getGrade() < 5.00 && student.getGrade() >= 3.50) {
                     view += " Average student.";
                 }
-                else
-                {
+                else {
                     view += " Very nice person.";
                 }
 
