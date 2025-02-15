@@ -2,10 +2,10 @@ package JO01WorkingWithAbstractions.L04HotelReservation;
 
 public enum Season {
 
-    Autumn(1),
-    Spring(2),
-    Winter(3),
-    Summer(4);
+    AUTUMN(1),
+    SPRING(2),
+    WINTER(3),
+    SUMMER(4);
 
     private int multiplier;
 

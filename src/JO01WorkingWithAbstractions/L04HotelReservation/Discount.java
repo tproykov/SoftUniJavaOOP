@@ -3,8 +3,8 @@ package JO01WorkingWithAbstractions.L04HotelReservation;
 public enum Discount {
 
     VIP(0.20),
-    SecondVisit(0.10),
-    None(0);
+    SECONDVISIT(0.10),
+    NONE(0);
 
     private double percentage;
 
