@@ -14,7 +14,7 @@ public class Main {
         CardRank cardRankEnum = CardRank.valueOf(cardRank);
         CardSuit cardSuitEnum = CardSuit.valueOf(cardSuit);
 
-        System.out.printf("Card name: %s of %S; Card power: %d", cardRankEnum, cardSuitEnum,
-                cardRankEnum.getPower() + cardSuitEnum.getPower());
+        Card card = new Card(cardRankEnum, cardSuitEnum);
+        System.out.println(card);
     }
 }
