@@ -5,13 +5,13 @@ import java.util.Map;
 
 public class StudentSystem {
 
-    private Map<String, Student> students;
+    private Map<String, Student> studentMap;
 
     public StudentSystem() {
-        this.students = new HashMap<>();
+        this.studentMap = new HashMap<>();
     }
 
-    public void ParseCommand(String[] command) {
+    public void parseCommand(String[] command) {
 
         if (command[0].equals("Create")) {
 
@@ -19,27 +19,24 @@ public class StudentSystem {
             int age = Integer.parseInt(command[2]);
             double grade = Double.parseDouble(command[3]);
 
-            if (!students.containsKey(name)) {
+            if (!studentMap.containsKey(name)) {
                 Student student = new Student(name, age, grade);
-                students.put(name, student);
+                studentMap.put(name, student);
             }
-        }
-        else if (command[0].equals("Show")) {
+        } else if (command[0].equals("Show")) {
 
             String name = command[1];
-            if (students.containsKey(name)) {
+            if (studentMap.containsKey(name)) {
 
-                Student student = students.get(name);
+                Student student = studentMap.get(name);
 
-                String view = String.format("%s is %s years old.",student.getName(),student.getAge());
+                String view = String.format("%s is %s years old.", student.getName(), student.getAge());
 
                 if (student.getGrade() >= 5.00) {
                     view += " Excellent student.";
-                }
-                else if (student.getGrade() < 5.00 && student.getGrade() >= 3.50) {
+                } else if (student.getGrade() < 5.00 && student.getGrade() >= 3.50) {
                     view += " Average student.";
-                }
-                else {
+                } else {
                     view += " Very nice person.";
                 }
 

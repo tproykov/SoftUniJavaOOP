@@ -15,7 +15,7 @@ public class Main {
 
             String[] command = input.split(" ");
 
-            studentSystem.ParseCommand(command);
+            studentSystem.parseCommand(command);
         }
     }
 }
