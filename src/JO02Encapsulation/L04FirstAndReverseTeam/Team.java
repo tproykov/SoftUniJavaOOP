@@ -10,34 +10,33 @@ public class Team {
     private List<Person> firstTeam;
     private List<Person> reserveTeam;
 
-    public Team(String name) {
-        this.name = name;
+    public Team(String name){
+        setName(name);
         firstTeam = new ArrayList<>();
         reserveTeam = new ArrayList<>();
     }
 
-    private void setName(String name) {
+    private void setName(String name){
         this.name = name;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    public void addPlayer(Person person) {
-        if (person.getAge() < 40) {
+    public void addPlayer(Person person){
+        if (person.getAge() < 40){
             firstTeam.add(person);
-        }
-        else {
+        }else {
             reserveTeam.add(person);
         }
     }
 
-    public List<Person> getFirstTeam() {
+    public List<Person> getFirstTeam(){
         return Collections.unmodifiableList(this.firstTeam);
     }
-
-    public List<Person> getReserveTeam() {
+    public List<Person> getReserveTeam(){
         return Collections.unmodifiableList(this.reserveTeam);
     }
+
 }

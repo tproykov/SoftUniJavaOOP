@@ -1,4 +1,4 @@
-package JO02Encapsulation.L04FirstAndReverseTeam;
+
 
 public class Person {
     private String firstName;
@@ -16,8 +16,9 @@ public class Person {
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String firstName) {
-        if (firstName.length() < 3){
+        if (firstName.length() < 3) {
             throw new IllegalArgumentException("First name cannot be less than 3 symbols");
         }
         this.firstName = firstName;
@@ -28,7 +29,7 @@ public class Person {
     }
 
     public void setLastName(String lastName) {
-        if (lastName.length() < 3){
+        if (lastName == null || lastName.length() < 3) {
             throw new IllegalArgumentException("Last name cannot be less than 3 symbols");
         }
         this.lastName = lastName;
@@ -39,7 +40,7 @@ public class Person {
     }
 
     public void setAge(int age) {
-        if (age <= 0){
+        if (age <= 0) {
             throw new IllegalArgumentException("Age cannot be zero or negative integer");
         }
         this.age = age;
@@ -50,22 +51,23 @@ public class Person {
     }
 
     public void setSalary(double salary) {
-        if (salary < 460){
+        if (salary < 460.0) {
             throw new IllegalArgumentException("Salary cannot be less than 460 leva");
         }
         this.salary = salary;
     }
 
     public void increaseSalary(double bonus) {
-        if (this.age < 30){
-            this.salary += this.salary * (bonus / 2) / 100;
-        }else {
-            this.salary += this.salary * bonus / 100;
+        if (this.age < 30) {
+            this.salary = this.salary * (1 + bonus / 200);
+        } else {
+            this.salary = this.salary * (1 + bonus / 100);
         }
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.format("%s %s gets %f leva", this.getFirstName(), this.getLastName(), this.getSalary());
+
     }
 }
