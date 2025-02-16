@@ -20,48 +20,62 @@ public class Main {
 
         fillTheMatrix(rows, cols, matrix);
 
-        long sum = 0;
-
+        long starsCollected = 0;
         String command;
         while (!"Let the Force be with you".equals(command = scanner.nextLine())) {
 
-            int[] ivoS = Arrays.stream(command.split(" "))
+            int[] jediCoordinates = Arrays.stream(command.split(" "))
                     .mapToInt(Integer::parseInt)
                     .toArray();
 
-            int[] evil = Arrays.stream(scanner.nextLine()
+            int[] evilForceCoordinates = Arrays.stream(scanner.nextLine()
                     .split(" "))
                     .mapToInt(Integer::parseInt)
                     .toArray();
 
-            int xE = evil[0];
-            int yE = evil[1];
+            int evilForceRowPosition = evilForceCoordinates[0];
+            int evilForceColPosition = evilForceCoordinates[1];
 
-            while (xE >= 0 && yE >= 0) {
+            moveEvilForce(evilForceRowPosition, evilForceColPosition, matrix);
 
-                if (xE >= 0 && xE < matrix.length && yE >= 0 && yE < matrix[0].length) {
-                    matrix[xE][yE] = 0;
-                }
+            int jediRowPosition = jediCoordinates[0];
+            int jediColPosition = jediCoordinates[1];
 
-                xE--;
-                yE--;
-            }
-
-            int xI = ivoS[0];
-            int yI = ivoS[1];
-
-            while (xI >= 0 && yI < matrix[1].length) {
-
-                if (xI >= 0 && xI < matrix.length && yI >= 0 && yI < matrix[0].length) {
-                    sum += matrix[xI][yI];
-                }
-
-                yI++;
-                xI--;
-            }
+            starsCollected = moveJediAndCollectStars(jediRowPosition, jediColPosition, matrix,
+                    starsCollected);
         }
 
-        System.out.println(sum);
+        System.out.println(starsCollected);
+    }
+
+    private static long moveJediAndCollectStars(int jediRowPosition, int jediColPosition,
+                                                int[][] matrix, long starsCollected) {
+
+        while (jediRowPosition >= 0 && jediColPosition < matrix[1].length) {
+
+            if (jediRowPosition < matrix.length && jediColPosition >= 0
+                    && jediColPosition < matrix[0].length) {
+
+                starsCollected += matrix[jediRowPosition][jediColPosition];
+            }
+
+            jediColPosition++;
+            jediRowPosition--;
+        }
+        return starsCollected;
+    }
+
+    private static void moveEvilForce(int evilForceRowPosition, int evilForceColPosition, int[][] matrix) {
+
+        while (evilForceRowPosition >= 0 && evilForceColPosition >= 0) {
+
+            if (evilForceRowPosition < matrix.length && evilForceColPosition < matrix[0].length) {
+                matrix[evilForceRowPosition][evilForceColPosition] = 0;
+            }
+
+            evilForceRowPosition--;
+            evilForceColPosition--;
+        }
     }
 
     private static void fillTheMatrix(int rows, int cols, int[][] matrix) {
