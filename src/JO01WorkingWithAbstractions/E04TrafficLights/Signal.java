@@ -8,11 +8,17 @@ public enum Signal {
 
     public static void updateSignal(Signal[] signals) {
         for (int i = 0; i < signals.length; i++) {
-            signals[i] = switch (signals[i]) {
-                case RED -> Signal.GREEN;
-                case GREEN -> Signal.YELLOW;
-                case YELLOW -> Signal.RED;
-            };
+            switch (signals[i]) {
+                case RED:
+                    signals[i] = Signal.GREEN;
+                    break;
+                case GREEN:
+                    signals[i] = Signal.YELLOW;
+                    break;
+                case YELLOW:
+                    signals[i] = Signal.RED;
+                    break;
+            }
         }
     }
 
