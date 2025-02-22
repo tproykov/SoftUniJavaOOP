@@ -36,11 +36,16 @@ public class TreasureBag {
             return false;
         }
 
-        return switch (type) {
-            case GEM -> hasEnoughGold(itemQuantity);
-            case CASH -> hasEnoughGems(itemQuantity);
-            case GOLD -> true;
-        };
+        switch (type) {
+            case Gem:
+                return hasEnoughGold(itemQuantity);
+            case Cash:
+                return hasEnoughGems(itemQuantity);
+            case Gold:
+                return true;
+            default:
+                return false;
+        }
     }
 
     private boolean exceedsBagCapacity(long itemQuantity) {
@@ -48,14 +53,14 @@ public class TreasureBag {
     }
 
     private boolean hasEnoughGold(long itemQuantity) {
-        long currentGoldAmount = getTotalAmount(TreasureType.GOLD);
-        long currentGemAmount = getTotalAmount(TreasureType.GEM);
+        long currentGoldAmount = getTotalAmount(TreasureType.Gold);
+        long currentGemAmount = getTotalAmount(TreasureType.Gem);
         return currentGoldAmount >= currentGemAmount + itemQuantity;
     }
 
     private boolean hasEnoughGems(long itemQuantity) {
-        long currentGemAmount = getTotalAmount(TreasureType.GEM);
-        long currentCashAmount = getTotalAmount(TreasureType.CASH);
+        long currentGemAmount = getTotalAmount(TreasureType.Gem);
+        long currentCashAmount = getTotalAmount(TreasureType.Cash);
         return currentGemAmount >= currentCashAmount + itemQuantity;
     }
 
