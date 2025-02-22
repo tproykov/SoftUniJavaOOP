@@ -38,5 +38,4 @@ public class Team {
     public List<Person> getReserveTeam(){
         return Collections.unmodifiableList(this.reserveTeam);
     }
-
 }
