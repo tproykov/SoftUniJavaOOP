@@ -9,9 +9,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         int n = Integer.parseInt(reader.readLine());
+
         List<Person> people = new ArrayList<>();
+
         for (int i = 0; i < n; i++) {
             String[] input = reader.readLine().split(" ");
             try {
@@ -20,10 +24,13 @@ public class Main {
                 System.out.println(exception.getMessage());
             }
         }
+
         Team team = new Team("Black Eagles");
+
         for (Person player : people) {
             team.addPlayer(player);
         }
+
         System.out.println("First team have " + team.getFirstTeam().size() + " players");
         System.out.println("Reserve team have " + team.getReserveTeam().size() + " players");
     }
