@@ -48,7 +48,7 @@ public class Person {
             this.products.add(product);
         }
         else {
-            throw new IllegalArgumentException(String.format("%s can't afford %s", this.money, product.getName()));
+            throw new IllegalArgumentException(String.format("%s can't afford %s", this.name, product.getName()));
         }
     }
 }
