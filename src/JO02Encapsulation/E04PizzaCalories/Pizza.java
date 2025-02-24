@@ -10,9 +10,8 @@ public class Pizza {
     private List<Topping> toppings;
 
     public Pizza(String name, int numberOfToppings) {
-        this.name = name;
-        this.dough = new Dough();
-        this.toppings = new ArrayList<>();
+
+
 
     }
 
