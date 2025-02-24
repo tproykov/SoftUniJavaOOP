@@ -2,6 +2,7 @@ package JO02Encapsulation.E03ShoppingSpree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Person {
 
@@ -31,6 +32,14 @@ public class Person {
 
     public String getName() {
         return name;
+    }
+
+    public int getProductsCount() {
+        return this.products.size();
+    }
+
+    public List<String> getProducts() {
+        return this.products.stream().map(Product::getName).collect(Collectors.toList());
     }
 
     public void buyProduct(Product product) {
