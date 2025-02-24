@@ -11,8 +11,12 @@ public class Main {
         String name = scanner.nextLine();
         int age = Integer.parseInt(scanner.nextLine());
 
-        Chicken chicken = new Chicken(name, age);
+        try {
+            Chicken chicken = new Chicken(name, age);
+            System.out.println(chicken);
 
-        System.out.println(chicken);
+        }catch (IllegalArgumentException exception){
+            System.out.println(exception.getMessage());
+        }
     }
 }
