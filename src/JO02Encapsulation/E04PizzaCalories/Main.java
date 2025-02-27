@@ -25,8 +25,9 @@ public class Main {
             myPizza.setDough(pizzaDough);
 
             String[] toppingInputData = scanner.nextLine().split("\\s+");
-            
+
             while (!toppingInputData[0].equals("END")){
+
                 String toppingType = toppingInputData[1];
                 double toppingWeight = Double.parseDouble(toppingInputData[2]);
 
@@ -36,8 +37,11 @@ public class Main {
 
                 toppingInputData = scanner.nextLine().split("\\s+");
             }
+
             System.out.printf("%s - %.2f%n", myPizza.getName(), myPizza.getOverallCalories());
+
         }catch (IllegalArgumentException exception){
+
             System.out.println(exception.getMessage());
         }
     }
