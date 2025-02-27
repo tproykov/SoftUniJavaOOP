@@ -14,6 +14,14 @@ public class Dough {
         setWeight(weight);
     }
 
+    private void setWeight(double weight) {
+        if (weight >= 1 && weight <= 200) {
+            this.weight = weight;
+        }else {
+            throw new IllegalArgumentException("Dough weight should be in the range [1..200].");
+        }
+    }
+
     private void setFlourType(String flourType) {
         if (Arrays.stream(FlourTypeModifier.values()).map(FlourTypeModifier::toString).anyMatch(type -> type.equals(flourType.toLowerCase()))) {
             this.flourType = flourType;
@@ -27,14 +35,6 @@ public class Dough {
             this.bakingTechnique = bakingTechnique;
         } else {
             throw new IllegalArgumentException("Invalid type of dough.");
-        }
-    }
-
-    private void setWeight(double weight) {
-        if (weight >= 1 && weight <= 200) {
-            this.weight = weight;
-        }else {
-            throw new IllegalArgumentException("Dough weight should be in the range [1..200].");
         }
     }
 
