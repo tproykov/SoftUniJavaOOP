@@ -15,7 +15,7 @@ public class Player {
         setSprint(sprint);
         setDribble(dribble);
         setPassing(passing);
-        this.shooting = shooting;
+        setShooting(shooting);
     }
 
     private void setName(String name) {
@@ -40,5 +40,9 @@ public class Player {
 
     private void setPassing(int passing) {
         this.passing = passing;
+    }
+
+    private void setShooting(int shooting) {
+        this.shooting = shooting;
     }
 }
