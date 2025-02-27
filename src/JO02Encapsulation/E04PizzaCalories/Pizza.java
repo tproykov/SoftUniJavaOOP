@@ -23,7 +23,7 @@ public class Pizza {
     }
 
     private void setName(String name) {
-        if (name.trim().length() > 0 && name.length() <= 15) {
+        if (!name.trim().isEmpty() && name.length() <= 15) {
             this.name = name;
         } else {
             throw new IllegalArgumentException("Pizza name should be between 1 and 15 symbols.");

@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Tomcat tomcat = new Tomcat("Tom", 10, "Male");
+//        Tomcat tomcat = new Tomcat("Tom", 10, "Male");
 
 
 
