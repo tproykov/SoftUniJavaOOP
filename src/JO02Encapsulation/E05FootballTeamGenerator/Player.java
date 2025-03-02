@@ -65,7 +65,7 @@ public class Player {
         this.shooting = shooting;
     }
 
-    public double overallSkillsLevel() {
+    public double overallSkillLevel() {
         return (this.endurance + this.sprint + this.dribble + this.passing +
                 this.shooting) / 5.0;
     }

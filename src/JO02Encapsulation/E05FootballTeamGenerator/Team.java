@@ -28,18 +28,30 @@ public class Team {
         this.players.add(player);
     }
 
-    public void removePlayer(Player player) {
-        if (!this.players.contains(player)) {
-            throw new IllegalArgumentException("Player " + player.getName()
-                    + " is not in " + this.name + " team");
+    public void removePlayer(String playerName) {
+        boolean playerExists = false;
+
+        for (int i = 0; i < players.size(); i++) {
+            if (players.get(i).getName().equals(playerName)) {
+                players.remove(i);
+                playerExists = true;
+                break;
+            }
         }
-        this.players.remove(player);
+
+        if (!playerExists) {
+            throw new IllegalArgumentException("Player " + playerName + " is not in " + this.name + " team.");
+        }
     }
 
     public double getRating() {
+        if (players.isEmpty()) {
+            return 0;
+        }
+
         double sum = 0;
         for (Player player : players) {
-            sum += player.overallSkillsLevel();
+            sum += player.overallSkillLevel();
         }
         return sum / players.size();
     }
