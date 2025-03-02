@@ -29,6 +29,10 @@ public class Team {
     }
 
     public void removePlayer(Player player) {
+        if (!this.players.contains(player)) {
+            throw new IllegalArgumentException("Player " + player.getName()
+                    + " is not in " + this.name + " team");
+        }
         this.players.remove(player);
     }
 
