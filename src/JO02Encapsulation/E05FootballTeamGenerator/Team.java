@@ -1,5 +1,6 @@
 package JO02Encapsulation.E05FootballTeamGenerator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
@@ -7,9 +8,9 @@ public class Team {
     private String name;
     private List<Player> players;
 
-    public Team(String name, List<Player> players) {
+    public Team(String name) {
         setName(name);
-        setPlayers(players);
+        this.players = new ArrayList<>();
     }
 
     private void setName(String name) {
@@ -18,10 +19,6 @@ public class Team {
 
     public String getName() {
         return name;
-    }
-
-    public void setPlayers(List<Player> players) {
-        this.players = players;
     }
 
     public void addPlayer(Player player) {
@@ -39,6 +36,4 @@ public class Team {
         }
         return 0.0;
     }
-
-
 }
