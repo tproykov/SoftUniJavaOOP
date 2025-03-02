@@ -37,6 +37,7 @@ public class Team {
         for (Player player : players) {
 
         }
+        return 0.0;
     }
 
 
