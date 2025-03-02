@@ -19,43 +19,52 @@ public class Main {
             String teamName = tokens[1];
             String playerName;
 
-            switch (command) {
-                case "Team":
-                    teamName = tokens[1];
-                    teams.put(teamName, new Team(teamName));
-                    break;
-
-                case "Add":
-                    playerName = tokens[2];
-                    int endurance = Integer.parseInt(tokens[3]);
-                    int sprint = Integer.parseInt(tokens[4]);
-                    int dribble = Integer.parseInt(tokens[5]);
-                    int passing = Integer.parseInt(tokens[6]);
-                    int shooting = Integer.parseInt(tokens[7]);
-
-                    if (!teams.containsKey(teamName)) {
-                        System.out.println("Team " + teamName + " does not exist.");
+            try {
+                switch (command) {
+                    case "Team":
+                        teamName = tokens[1];
+                        teams.put(teamName, new Team(teamName));
                         break;
-                    }
 
-                    Player player = new Player(playerName, endurance, sprint, dribble,
-                            passing, shooting);
-                    teams.get(teamName).addPlayer(player);
-                    break;
+                    case "Add":
+                        playerName = tokens[2];
+                        int endurance = Integer.parseInt(tokens[3]);
+                        int sprint = Integer.parseInt(tokens[4]);
+                        int dribble = Integer.parseInt(tokens[5]);
+                        int passing = Integer.parseInt(tokens[6]);
+                        int shooting = Integer.parseInt(tokens[7]);
 
-                case "Remove":
-                    playerName = tokens[2];
-                    if (!teams.containsKey(teamName)) {
-                        System.out.println("Team " + teamName + " does not exist.");
+                        if (!teams.containsKey(teamName)) {
+                            System.out.println("Team " + teamName + " does not exist.");
+                            break;
+                        }
+
+                        Player player = new Player(playerName, endurance, sprint, dribble,
+                                passing, shooting);
+                        teams.get(teamName).addPlayer(player);
                         break;
-                    }
 
-                    teams.get(teamName).removePlayer(playerName);
-                    break;
+                    case "Remove":
+                        playerName = tokens[2];
+                        if (!teams.containsKey(teamName)) {
+                            System.out.println("Team " + teamName + " does not exist.");
+                            break;
+                        }
 
-                case "Rating":
-                    int rating = (int) Math.round(teams.get(teamName).getRating());
-                    System.out.println(teamName + " - " + rating);
+                        teams.get(teamName).removePlayer(playerName);
+                        break;
+
+                    case "Rating":
+                        if (!teams.containsKey(teamName)) {
+                            System.out.println("Team " + teamName + " does not exist.");
+                            break;
+                        }
+
+                        int rating = (int) Math.round(teams.get(teamName).getRating());
+                        System.out.println(teamName + " - " + rating);
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
         }
     }
