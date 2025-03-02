@@ -31,6 +31,9 @@ public class Player {
     }
 
     private void setEndurance(int endurance) {
+        if (endurance < 0) {
+            throw new IllegalArgumentException("Endurance should be between 0 and 100.");
+        }
         this.endurance = endurance;
     }
 
