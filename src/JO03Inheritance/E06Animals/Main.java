@@ -28,21 +28,17 @@ public class Main {
             switch (animalType) {
                 case "Cat":
                     Animal cat = new Cat(animalName, age, gender);
-
+                    System.out.println(cat);
                     break;
 
                 case "Dog":
-                    Animal dog = new Dog();
-                    dog.setName(animalName);
-                    dog.setAge(age);
-                    dog.setGender(gender);
+                    Animal dog = new Dog(animalName, age, gender);
+                    System.out.println(dog);
                     break;
 
                 case "Frog":
-                    Animal frog = new Frog();
-                    frog.setName(animalName);
-                    frog.setAge(age);
-                    frog.setGender(gender);
+                    Animal frog = new Frog(animalName, age, gender);
+                    System.out.println(frog);
                     break;
             }
 
