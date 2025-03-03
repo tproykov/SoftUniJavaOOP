@@ -42,12 +42,12 @@ public class Animal {
         this.gender = gender;
     }
 
-    public void produceSound() {
-
+    public String produceSound() {
+        return null;
     }
 
     @Override
     public String toString() {
-        return String.format("%s\n%s %d %s", getName(), getName(), getAge(), getGender());
+        return String.format("%s\n%s %d %s\n%s", getName(), getName(), getAge(), getGender(), produceSound());
     }
 }

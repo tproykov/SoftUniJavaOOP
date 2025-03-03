@@ -9,7 +9,7 @@ public class Kitten extends Cat{
     }
 
     @Override
-    public void produceSound() {
-        System.out.println("Meow");
+    public String produceSound() {
+        return "Meow";
     }
 }

@@ -9,7 +9,7 @@ public class Tomcat extends Cat{
     }
 
     @Override
-    public void produceSound() {
-        System.out.println("MEOW");
+    public String produceSound() {
+        return "MEOW";
     }
 }

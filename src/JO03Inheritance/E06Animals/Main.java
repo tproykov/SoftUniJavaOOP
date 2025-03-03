@@ -42,10 +42,7 @@ public class Main {
                     break;
             }
 
-
             input1 = scanner.nextLine();
         }
-
-
     }
 }
