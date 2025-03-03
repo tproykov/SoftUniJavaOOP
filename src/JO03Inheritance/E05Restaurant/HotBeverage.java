@@ -1,6 +1,4 @@
 package JO03Inheritance.E05Restaurant;
 
-public class Main {
-
-
+public class HotBeverage {
 }
