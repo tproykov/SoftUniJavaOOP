@@ -20,7 +20,7 @@ public class Main {
             String gender = tokens[2];
 
             if (age < 0 || !gender.equals("Male") && !gender.equals("Female")) {
-                System.out.println("Invalid input");
+                System.out.println("Invalid input!");
                 input1 = scanner.nextLine();
                 break;
             }
