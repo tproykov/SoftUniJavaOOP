@@ -48,6 +48,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return String.format("%s\n%s %d %s\n%s", getName(), getName(), getAge(), getGender(), produceSound());
+        return String.format("%s\n%s %d %s\n%s", getClass().getSimpleName(),
+                getName(), getAge(), getGender(), produceSound());
     }
 }
