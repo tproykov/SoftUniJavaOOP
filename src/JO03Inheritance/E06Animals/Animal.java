@@ -2,14 +2,16 @@ package JO03Inheritance.E06Animals;
 
 public class Animal {
 
+    private static final String INVALID_INPUT = "Invalid input!";
+
     private String name;
     private int age;
     private String gender;
 
     public Animal(String name, int age, String gender) {
-        setName(name);
-        setAge(age);
-        setGender(gender);
+        this.setName(name);
+        this.setAge(age);
+        this.setGender(gender);
     }
 
     public String getName() {
@@ -17,6 +19,9 @@ public class Animal {
     }
 
     public void setName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException(INVALID_INPUT);
+        }
         this.name = name;
     }
 
@@ -26,7 +31,7 @@ public class Animal {
 
     public void setAge(int age) {
         if (age < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(INVALID_INPUT);
         }
         this.age = age;
     }
@@ -37,7 +42,7 @@ public class Animal {
 
     public void setGender(String gender) {
         if (!gender.equals("Male") && !gender.equals("Female")) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(INVALID_INPUT);
         }
         this.gender = gender;
     }
