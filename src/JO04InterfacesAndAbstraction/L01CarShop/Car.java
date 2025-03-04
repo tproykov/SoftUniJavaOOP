@@ -1,6 +1,16 @@
 package JO04InterfacesAndAbstraction.L01CarShop;
 
-public interface Car {
+import java.io.Serializable;
 
-    int TIRES = 4;
+public interface Car extends Serializable {
+
+    Integer TIRES = 4;
+
+    String getModel();
+
+    String getColor();
+
+    Integer getHorsePower();
+
+    String countryProduced();
 }
