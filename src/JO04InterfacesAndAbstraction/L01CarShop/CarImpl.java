@@ -39,6 +39,6 @@ public class CarImpl implements Car{
         return String.format("This is %s produced in %s and have %d tires",
                 this.model,
                 this.countryProduced,
-                Car.TIRES);
+                Car.TIRES); 
     }
 }
