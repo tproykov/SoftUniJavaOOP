@@ -1,13 +1,13 @@
-package JO04InterfacesAndAbstraction.L01CarShop;
+package JO04InterfacesAndAbstraction.L02CarShopExtended;
 
-public class Seat implements Car {
+public class CarImpl implements Car {
 
     private String model;
     private String color;
     private Integer horsePower;
     private String countryProduced;
 
-    public Seat(String model, String color, Integer price, String country) {
+    public CarImpl(String model, String color, Integer price, String country) {
         this.model = model;
         this.color = color;
         this.horsePower = price;
@@ -37,6 +37,6 @@ public class Seat implements Car {
     @Override
     public String toString() {
         return "This is " + this.model + " produced in "
-                + this.countryProduced + " and have " + Car.TIRES + " tires";
+                + this.countryProduced + " and have " + JO04InterfacesAndAbstraction.L01CarShop.Car.TIRES + " tires";
     }
 }
