@@ -36,6 +36,7 @@ public class Seat implements Car {
 
     @Override
     public String toString() {
-        return null;
+        return "This is " + this.model + " produced in "
+                + this.countryProduced + " and have " + TIRES + " tires";
     }
 }
