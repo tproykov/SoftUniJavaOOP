@@ -13,4 +13,9 @@ public class Seat extends CarImpl implements Sellable {
     public Double getPrice() {
         return this.price;
     }
+
+    @Override
+    public String toString() {
+        return this.getModel() + " sells for " + this.price;
+    }
 }
