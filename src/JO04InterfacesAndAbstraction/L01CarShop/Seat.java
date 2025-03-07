@@ -1,6 +1,6 @@
 package JO04InterfacesAndAbstraction.L01CarShop;
 
-public class Seat implements Car{
+public class Seat implements Car {
 
     private String model;
     private String color;
@@ -15,27 +15,27 @@ public class Seat implements Car{
     }
 
     @Override
-    public String toString() {
-        return null;
-    }
-
-    @Override
     public String getModel() {
-        return "";
+        return this.model;
     }
 
     @Override
     public String getColor() {
-        return "";
+        return this.color;
     }
 
     @Override
     public Integer getHorsePower() {
-        return 0;
+        return this.horsePower;
     }
 
     @Override
     public String countryProduced() {
-        return "";
+        return this.countryProduced;
+    }
+
+    @Override
+    public String toString() {
+        return null;
     }
 }
