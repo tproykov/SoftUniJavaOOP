@@ -37,6 +37,6 @@ public class CarImpl implements Car {
     @Override
     public String toString() {
         return "This is " + this.model + " produced in "
-                + this.countryProduced + " and have " + JO04InterfacesAndAbstraction.L01CarShop.Car.TIRES + " tires";
+                + this.countryProduced + " and have " + Car.TIRES + " tires";
     }
 }
