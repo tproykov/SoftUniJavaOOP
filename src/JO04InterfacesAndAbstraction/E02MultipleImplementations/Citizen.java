@@ -16,21 +16,21 @@ public class Citizen implements Person, Identifiable, Birthable {
 
     @Override
     public String getName() {
-        return this.name;
+        return name;
     }
 
     @Override
     public int getAge() {
-        return this.age;
+        return age;
     }
 
     @Override
     public String getId() {
-        return "";
+        return id;
     }
 
     @Override
     public String getBirthDate() {
-        return "";
+        return birthDate;
     }
 }
