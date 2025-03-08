@@ -28,7 +28,7 @@ public class Main {
         String falseId = scanner.nextLine();
 
         for (Identifiable identifiable : identifiables) {
-            if (identifiable.getId().contains(falseId)) {
+            if (identifiable.getId().endsWith(falseId)) {
                 System.out.println(identifiable.getId());
             }
         }
