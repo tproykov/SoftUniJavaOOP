@@ -15,7 +15,7 @@ public class Pet implements Birthable {
     }
 
     @Override
-    public String getBirthDay() {
+    public String getBirthDate() {
         return birthDate;
     }
 }

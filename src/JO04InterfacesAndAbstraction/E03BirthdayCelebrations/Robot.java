@@ -2,12 +2,12 @@ package JO04InterfacesAndAbstraction.E03BirthdayCelebrations;
 
 public class Robot implements Identifiable {
 
-    private String model;
     private String id;
+    private String model;
 
-    public Robot(String model, String id) {
-        this.model = model;
+    public Robot(String id, String model) {
         this.id = id;
+        this.model = model;
     }
 
     @Override

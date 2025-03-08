@@ -23,7 +23,7 @@ public class Citizen implements Identifiable, Birthable {
     }
 
     @Override
-    public String getBirthDay() {
+    public String getBirthDate() {
         return birthDate;
     }
 
