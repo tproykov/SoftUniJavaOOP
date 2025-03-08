@@ -24,6 +24,9 @@ public class Main {
                 case "Pet":
                     birthables.add(new Pet(tokens[1], tokens[2]));
                     break;
+                case "Robot":
+                    new Robot(tokens[1], tokens[2]);
+                    break;
             }
         }
 

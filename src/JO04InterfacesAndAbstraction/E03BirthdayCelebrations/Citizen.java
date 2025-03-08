@@ -18,6 +18,10 @@ public class Citizen implements Identifiable, Birthable {
         return name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String getBirthDay() {
         return birthDate;
