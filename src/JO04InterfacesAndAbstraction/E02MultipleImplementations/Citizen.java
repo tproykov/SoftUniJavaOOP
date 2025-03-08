@@ -33,9 +33,4 @@ public class Citizen implements Person, Identifiable, Birthable {
     public String getBirthDate() {
         return "";
     }
-
-    @Override
-    public String toString() {
-        return
-    }
 }
