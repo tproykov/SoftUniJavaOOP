@@ -1,4 +1,4 @@
-package JO04InterfacesAndAbstraction.E03BirthDayCelebrations;
+package JO04InterfacesAndAbstraction.E03BirthdayCelebrations;
 
 public class Robot implements Identifiable {
 

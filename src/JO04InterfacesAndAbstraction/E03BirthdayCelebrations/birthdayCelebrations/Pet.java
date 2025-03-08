@@ -1,4 +1,4 @@
-package JO04InterfacesAndAbstraction.E03BirthDayCelebrations;
+package birthdayCelebrations;
 
 public class Pet implements Birthable {
 

@@ -1,4 +1,4 @@
-package JO04InterfacesAndAbstraction.E03BirthDayCelebrations;
+package JO04InterfacesAndAbstraction.E03BirthdayCelebrations;
 
 import java.util.ArrayList;
 import java.util.List;
