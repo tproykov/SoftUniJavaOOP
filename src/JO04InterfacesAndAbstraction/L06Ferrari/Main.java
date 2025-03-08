@@ -11,5 +11,7 @@ public class Main {
         String driverName = scanner.nextLine();
 
         Car ferrari = new Ferrari(driverName);
+
+        System.out.println(ferrari);
     }
 }
