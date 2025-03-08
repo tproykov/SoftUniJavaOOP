@@ -19,13 +19,7 @@ public class Main {
 
         Smartphone smartphone = new Smartphone(numbers, urls);
 
-
-
-
-
-
-
-
-
+        smartphone.call();
+        smartphone.browse();
     }
 }
