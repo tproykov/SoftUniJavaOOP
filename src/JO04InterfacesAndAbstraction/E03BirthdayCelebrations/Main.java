@@ -33,8 +33,8 @@ public class Main {
         String birthYear = scanner.nextLine();
 
         for (Birthable birthable : birthables) {
-            if (birthable.getBirthDay().endsWith(birthYear)) {
-                System.out.println(birthable.getBirthDay());
+            if (birthable.getBirthDate().endsWith(birthYear)) {
+                System.out.println(birthable.getBirthDate());
             }
         }
     }
