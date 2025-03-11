@@ -35,7 +35,7 @@ public class Player {
             throw new IllegalArgumentException("Endurance should be between 0 and 100.");
         }
         this.endurance = endurance;
-    }
+    } 
 
     private void setSprint(int sprint) {
         if (sprint < 0 || sprint > 100) {
