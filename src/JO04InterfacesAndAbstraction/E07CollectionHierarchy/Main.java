@@ -10,8 +10,6 @@ public class Main {
 
         String[] items = scanner.nextLine().split("\\s+");
 
-        int n = Integer.parseInt(items[0]);
-
         StringBuilder addCollectionAddResult = new StringBuilder();
         StringBuilder addRemoveCollectionAddResult = new StringBuilder();
         StringBuilder myListAddResult = new StringBuilder();
@@ -27,5 +25,19 @@ public class Main {
             addRemoveCollectionAddResult.append(addRemovableCollection.add(item)).append(" ");
             myListAddResult.append(myList.add(item)).append(" ");
         }
+
+        int n = Integer.parseInt(items[0]);
+
+        for (int i = 0; i < n; i++) {
+
+            addRemoveCollectionRemoveResult.append(addRemovableCollection.remove()).append(" ");
+            myListImplRemoveResult.append(myList.remove()).append(" ");
+        }
+
+        System.out.println(addCollectionAddResult);
+        System.out.println(addRemoveCollectionAddResult);
+        System.out.println(myListAddResult);
+        System.out.println(addRemoveCollectionRemoveResult);
+        System.out.println(myListImplRemoveResult);
     }
 }
