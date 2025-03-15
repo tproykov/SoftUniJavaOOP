@@ -1,4 +1,4 @@
-package JO05Polymorphism.L02Shapes;
+package shapes;
 
 public abstract class Shape {
 

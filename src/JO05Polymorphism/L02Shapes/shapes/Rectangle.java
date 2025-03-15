@@ -1,4 +1,4 @@
-package JO05Polymorphism.L02Shapes;
+package shapes;
 
 public class Rectangle extends Shape {
 
@@ -8,8 +8,6 @@ public class Rectangle extends Shape {
     public Rectangle(double height, double width) {
         this.height = height;
         this.width = width;
-        calculatePerimeter();
-        calculateArea();
     }
 
     public double getHeight() {
@@ -18,8 +16,6 @@ public class Rectangle extends Shape {
 
     public void setHeight(double height) {
         this.height = height;
-        calculatePerimeter();
-        calculateArea();
     }
 
     public double getWidth() {
@@ -28,8 +24,6 @@ public class Rectangle extends Shape {
 
     public void setWidth(double width) {
         this.width = width;
-        calculatePerimeter();
-        calculateArea();
     }
 
     @Override

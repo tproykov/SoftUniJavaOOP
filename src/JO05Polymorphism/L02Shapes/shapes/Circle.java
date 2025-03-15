@@ -1,4 +1,4 @@
-package JO05Polymorphism.L02Shapes;
+package shapes;
 
 public class Circle extends Shape {
 
@@ -6,18 +6,14 @@ public class Circle extends Shape {
 
     public Circle(double radius) {
         this.radius = radius;
-        calculatePerimeter();
-        calculateArea();
     }
 
-    public final double getRadius() {
+    public double getRadius() {
         return radius;
     }
 
     public void setRadius(double radius) {
         this.radius = radius;
-        calculatePerimeter();
-        calculateArea();
     }
 
     @Override
