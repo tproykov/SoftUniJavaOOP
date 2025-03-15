@@ -6,25 +6,12 @@ public abstract class Animal {
     private String favouriteFood;
 
     protected Animal(String name, String favouriteFood) {
-        this.setName(name);
-        this.setFavouriteFood(favouriteFood);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
-    }
-
-    public String getFavouriteFood() {
-        return favouriteFood;
-    }
-
-    public void setFavouriteFood(String favouriteFood) {
         this.favouriteFood = favouriteFood;
     }
 
-    public abstract String explainSelf();
+    public String explainSelf() {
+        return String.format("I am %s and my favourite food is %s\n", this.name,
+                this.favouriteFood);
+    }
 }

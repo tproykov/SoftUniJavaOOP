@@ -9,7 +9,6 @@ public class Dog extends Animal {
 
     @Override
     public String explainSelf() {
-        return String.format("I am %s and my favourite food is %s\nDJAAF", getName(),
-                getFavouriteFood());
+        return super.explainSelf() + "JAAF";
     }
 }

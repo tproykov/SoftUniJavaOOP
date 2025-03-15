@@ -9,7 +9,6 @@ public class Cat extends Animal {
 
     @Override
     public String explainSelf() {
-        return String.format("I am %s and my favourite food is %s\nMEEOW", getName(),
-                getFavouriteFood());
+        return super.explainSelf() + "MEEOW";
     }
 }
