@@ -1,6 +1,8 @@
 package JO04InterfacesAndAbstraction.E07CollectionHierarchy;
 
-public class AddCollection {
+public abstract class Collection {
+
+
 
 
 }
