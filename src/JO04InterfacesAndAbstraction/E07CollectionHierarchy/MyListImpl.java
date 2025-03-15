@@ -4,12 +4,12 @@ public class MyListImpl extends Collection implements MyList {
 
     @Override
     public int getUsed() {
-        return 0;
+        return this.items.size();
     }
 
     @Override
     public String remove() {
-        String itemToRemove = this.items.getLast();
+        String itemToRemove = this.items.get(this.items.size() - 1);
         this.items.remove(itemToRemove);
         return itemToRemove;
     }
