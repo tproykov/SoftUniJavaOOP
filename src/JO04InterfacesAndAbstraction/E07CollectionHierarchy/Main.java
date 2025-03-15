@@ -26,7 +26,7 @@ public class Main {
             myListAddResult.append(myList.add(item)).append(" ");
         }
 
-        int n = Integer.parseInt(items[0]);
+        int n = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < n; i++) {
 

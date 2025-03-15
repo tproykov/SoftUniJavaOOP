@@ -9,7 +9,7 @@ public class MyListImpl extends Collection implements MyList {
 
     @Override
     public String remove() {
-        String itemToRemove = this.items.get(this.items.size() - 1);
+        String itemToRemove = this.items.get(0);
         this.items.remove(itemToRemove);
         return itemToRemove;
     }
