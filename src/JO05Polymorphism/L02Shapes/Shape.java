@@ -5,13 +5,23 @@ public abstract class Shape {
     protected double perimeter;
     protected double area;
 
-    public double calculatePerimeter() {
-        return 0;
+    public double getPerimeter() {
+        return perimeter;
     }
 
-    public double calculateArea() {
-        return 0;
+    public void setPerimeter(double perimeter) {
+        this.perimeter = perimeter;
     }
 
+    public double getArea() {
+        return area;
+    }
 
+    public void setArea(double area) {
+        this.area = area;
+    }
+
+    public abstract double calculatePerimeter();
+
+    public abstract double calculateArea();
 }
