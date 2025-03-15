@@ -10,6 +10,8 @@ public class AddRemoveCollection extends Collection implements AddRemovable{
 
     @Override
     public String remove() {
-        return "";
+        String itemToRemove = this.items.get(this.items.size() - 1);
+        this.items.remove(itemToRemove);
+        return itemToRemove;
     }
 }
