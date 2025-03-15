@@ -17,5 +17,14 @@ public abstract class Mammal extends Animal {
         this.livingRegion = livingRegion;
     }
 
+    @Override
+    public void eat(Food food) {
 
+        if (food instanceof Vegetable) {
+            this.setFoodEaten(this.getFoodEaten() + food.getQuantity());
+        }
+        else {
+            throw new IllegalArgumentException("Not a Vegetable");
+        }
+    }
 }
