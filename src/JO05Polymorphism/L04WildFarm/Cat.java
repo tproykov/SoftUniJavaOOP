@@ -26,7 +26,7 @@ public class Cat extends Feline {
 
     @Override
     public String toString() {
-        DecimalFormat df = new DecimalFormat("0.#");
+        DecimalFormat df = new DecimalFormat("##.##");
         return String.format("%s[%s, %s, %s, %s, %d]",
                 this.getAnimalType(),
                 this.getAnimalName(),
