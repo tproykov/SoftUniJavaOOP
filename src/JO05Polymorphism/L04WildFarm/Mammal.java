@@ -4,7 +4,8 @@ public abstract class Mammal extends Animal {
 
     private String livingRegion;
 
-    public Mammal(String animalName, String animalType, double animalWeight, Integer foodEaten, String livingRegion) {
+    public Mammal(String animalName, String animalType, double animalWeight, Integer foodEaten,
+                  String livingRegion) {
         super(animalName, animalType, animalWeight, foodEaten);
         this.livingRegion = livingRegion;
     }
@@ -24,7 +25,12 @@ public abstract class Mammal extends Animal {
             this.setFoodEaten(this.getFoodEaten() + food.getQuantity());
         }
         else {
-            throw new IllegalArgumentException("Not a Vegetable");
+            String animalType = "Zebras";
+            if (this.getClass().getSimpleName().equals("Mouse")) {
+                animalType = "Mice";
+            }
+
+            System.out.printf("%s are not eating that type of food!\n", animalType);
         }
     }
 }
