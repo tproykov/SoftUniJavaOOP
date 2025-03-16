@@ -42,9 +42,7 @@ public class Main {
             }
         }
 
-
-        
-
+        vehicles.values().forEach(System.out::println);
     }
 
     private static Vehicle createVehicle(String[] tokens) {

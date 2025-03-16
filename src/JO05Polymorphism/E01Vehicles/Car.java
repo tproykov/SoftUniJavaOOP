@@ -8,9 +8,4 @@ public class Car extends Vehicle {
         super(fuelQuantity, fuelConsumption);
         this.fuelConsumption = fuelConsumption + ADDITIONAL_AC_CONSUMPTION;
     }
-
-
-
-
-
 }

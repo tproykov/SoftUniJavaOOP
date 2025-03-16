@@ -29,13 +29,13 @@ public class Vehicle {
     }
 
     public String drive(double distance) {
-        double neededFuel = distance * this.fuelConsumption;
+        double neededFuel = distance * fuelConsumption;
 
         if (neededFuel > this.fuelQuantity) {
             return String.format("%s needs refueling", this.getClass().getSimpleName());
         }
 
-        this.fuelQuantity -= neededFuel;
+        this.fuelQuantity = this.fuelQuantity - neededFuel;
         DecimalFormat df = new DecimalFormat("##.##");
         return String.format("%s travelled %s km", this.getClass().getSimpleName(), df.format(distance));
     }

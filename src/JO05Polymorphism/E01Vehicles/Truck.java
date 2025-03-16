@@ -12,7 +12,8 @@ public class Truck extends Vehicle {
 
     @Override
     public void refuel(double liters) {
-        liters *= FUEL_LEAK_CORRECTION_PERCENTAGE;
+
+        liters = liters * FUEL_LEAK_CORRECTION_PERCENTAGE;
         super.refuel(liters);
     }
 }
