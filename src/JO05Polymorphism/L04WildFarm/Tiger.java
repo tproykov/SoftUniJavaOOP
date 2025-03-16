@@ -12,4 +12,14 @@ public class Tiger extends Feline {
         System.out.println("ROAAR!!!");
 
     }
+
+    @Override
+    public void eat(Food food) {
+        if (food instanceof Meat) {
+            this.setFoodEaten(this.getFoodEaten() + food.getQuantity());
+        }
+        else {
+            System.out.printf("%ss are not eating that type of food!\n", this.getAnimalType());
+        }
+    }
 }

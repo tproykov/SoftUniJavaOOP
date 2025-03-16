@@ -15,6 +15,5 @@ public class Feline extends Mammal {
     @Override
     public void eat(Food food) {
         this.setFoodEaten(this.getFoodEaten() + food.getQuantity());
-
     }
 }
