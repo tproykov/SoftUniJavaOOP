@@ -17,10 +17,11 @@ public abstract class Mammal extends Animal {
 
     @Override
     public String toString() {
-        return String.format("%s[%s, %.1f, %s, %d]",
+        DecimalFormat df = new DecimalFormat("0.#");
+        return String.format("%s[%s, %s, %s, %d]",
                 this.getAnimalType(),
                 this.getAnimalName(),
-                this.getAnimalWeight(),
+                df.format(this.getAnimalWeight()),
                 this.getLivingRegion(),
                 this.getFoodEaten());
     }
