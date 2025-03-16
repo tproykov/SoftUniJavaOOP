@@ -6,12 +6,9 @@ public class Mouse extends Mammal {
         super(animalName, animalType, animalWeight, foodEaten, livingRegion);
     }
 
-
     @Override
     public void makeSound() {
         System.out.println("SQUEEEAAAK!");
 
     }
-
-
 }

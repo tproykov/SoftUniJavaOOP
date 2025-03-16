@@ -7,5 +7,9 @@ public class Tiger extends Feline {
         super(animalName, animalType, animalWeight, foodEaten, livingRegion);
     }
 
+    @Override
+    public void makeSound() {
+        System.out.println("ROAAR!!!");
 
+    }
 }

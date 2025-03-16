@@ -8,5 +8,9 @@ public class Cat extends Feline {
         super(animalName, animalType, animalWeight, foodEaten, livingRegion);
     }
 
+    @Override
+    public void makeSound() {
+        System.out.println("Meowwww");
 
+    }
 }
