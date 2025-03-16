@@ -1,8 +1,8 @@
 package JO05Polymorphism.L04WildFarm;
 
-public class Meat extends Food {
+class Meat extends Food {
 
-    public Meat(Integer quantity) {
+    public Meat(int quantity) {
         super(quantity);
     }
 }

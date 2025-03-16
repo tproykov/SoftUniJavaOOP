@@ -1,12 +1,12 @@
 package JO05Polymorphism.L04WildFarm;
 
-public abstract class Mammal extends Animal {
+import java.text.DecimalFormat;
 
+abstract class Mammal extends Animal {
     private String livingRegion;
 
-    public Mammal(String animalName, String animalType, double animalWeight, Integer foodEaten,
-                  String livingRegion) {
-        super(animalName, animalType, animalWeight, foodEaten);
+    public Mammal(String animalName, String animalType, double animalWeight, String livingRegion) {
+        super(animalName, animalType, animalWeight);
         this.livingRegion = livingRegion;
     }
 
@@ -14,23 +14,14 @@ public abstract class Mammal extends Animal {
         return livingRegion;
     }
 
-    public void setLivingRegion(String livingRegion) {
-        this.livingRegion = livingRegion;
-    }
-
     @Override
-    public void eat(Food food) {
-
-        if (food instanceof Vegetable) {
-            this.setFoodEaten(this.getFoodEaten() + food.getQuantity());
-        }
-        else {
-            String animalType = "Zebras";
-            if (this.getClass().getSimpleName().equals("Mouse")) {
-                animalType = "Mice";
-            }
-
-            System.out.printf("%s are not eating that type of food!\n", animalType);
-        }
+    public String toString() {
+        DecimalFormat df = new DecimalFormat("0.#");
+        return String.format("%s[%s, %s, %s, %d]",
+                this.getAnimalType(),
+                this.getAnimalName(),
+                df.format(this.getAnimalWeight()),
+                this.getLivingRegion(),
+                this.getFoodEaten());
     }
 }

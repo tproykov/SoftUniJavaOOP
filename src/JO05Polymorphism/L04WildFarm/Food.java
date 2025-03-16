@@ -1,18 +1,13 @@
 package JO05Polymorphism.L04WildFarm;
 
-public abstract class Food {
+abstract class Food {
+    private int quantity;
 
-    private Integer quantity;
-
-    public Food(Integer quantity) {
+    public Food(int quantity) {
         this.quantity = quantity;
     }
 
-    public Integer getQuantity() {
+    public int getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
     }
 }
