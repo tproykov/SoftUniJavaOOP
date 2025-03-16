@@ -7,7 +7,7 @@ public class Truck extends Vehicle {
 
     public Truck(double fuelQuantity, double fuelConsumption) {
         super(fuelQuantity, fuelConsumption);
-        this.fuelQuantity = fuelConsumption + ADDITIONAL_AC_CONSUMPTION;
+        this.fuelConsumption = fuelConsumption + ADDITIONAL_AC_CONSUMPTION;
     }
 
     @Override
