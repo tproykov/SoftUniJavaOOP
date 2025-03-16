@@ -1,6 +1,6 @@
 package JO05Polymorphism.L04WildFarm;
 
-class Tiger extends Feline {
+public class Tiger extends Feline {
 
     public Tiger(String animalName, String animalType, double animalWeight, String livingRegion) {
         super(animalName, animalType, animalWeight, livingRegion);

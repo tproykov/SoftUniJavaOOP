@@ -1,6 +1,7 @@
 package JO05Polymorphism.L04WildFarm;
 
-abstract class Food {
+public abstract class Food {
+
     private int quantity;
 
     public Food(int quantity) {

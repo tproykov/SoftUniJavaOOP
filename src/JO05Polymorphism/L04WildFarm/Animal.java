@@ -1,6 +1,7 @@
 package JO05Polymorphism.L04WildFarm;
 
-abstract class Animal {
+public abstract class Animal {
+
     private String animalName;
     private String animalType;
     private double animalWeight;

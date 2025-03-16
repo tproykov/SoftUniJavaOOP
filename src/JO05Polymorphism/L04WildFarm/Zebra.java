@@ -1,6 +1,6 @@
 package JO05Polymorphism.L04WildFarm;
 
-class Zebra extends Mammal {
+public class Zebra extends Mammal {
 
     public Zebra(String animalName, String animalType, double animalWeight, String livingRegion) {
         super(animalName, animalType, animalWeight, livingRegion);

@@ -6,17 +6,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String input = scanner.nextLine();
+        String input;
+        while (!"End".equals(input = scanner.nextLine())) {
 
-        while (!input.equals("End")) {
             String[] animalInfo = input.split("\\s+");
+
             String animalType = animalInfo[0];
             String animalName = animalInfo[1];
             double animalWeight = Double.parseDouble(animalInfo[2]);
             String animalLivingRegion = animalInfo[3];
 
             Animal animal = null;
-
             switch (animalType) {
                 case "Cat":
                     String catBreed = animalInfo[4];
@@ -38,7 +38,6 @@ public class Main {
             int foodQuantity = Integer.parseInt(foodInfo[1]);
 
             Food food = null;
-
             if (foodType.equals("Vegetable")) {
                 food = new Vegetable(foodQuantity);
             } else if (foodType.equals("Meat")) {
@@ -49,8 +48,6 @@ public class Main {
             animal.eat(food);
 
             System.out.println(animal);
-
-            input = scanner.nextLine();
         }
     }
 }

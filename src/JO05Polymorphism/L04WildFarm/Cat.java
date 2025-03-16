@@ -2,7 +2,7 @@ package JO05Polymorphism.L04WildFarm;
 
 import java.text.DecimalFormat;
 
-class Cat extends Feline {
+public class Cat extends Feline {
     private String breed;
 
     public Cat(String animalName, String animalType, double animalWeight, String livingRegion, String breed) {
@@ -26,12 +26,11 @@ class Cat extends Feline {
 
     @Override
     public String toString() {
-        DecimalFormat df = new DecimalFormat("0.#");
-        return String.format("%s[%s, %s, %s, %s, %d]",
+        return String.format("%s[%s, %s, %.1f, %s, %d]",
                 this.getAnimalType(),
                 this.getAnimalName(),
                 this.getBreed(),
-                df.format(this.getAnimalWeight()),
+                this.getAnimalWeight(),
                 this.getLivingRegion(),
                 this.getFoodEaten());
     }
