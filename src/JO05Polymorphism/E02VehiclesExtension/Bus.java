@@ -7,7 +7,7 @@ public class Bus extends Vehicle {
         super(fuelQuantity, fuelConsumption);
     }
 
-    
+
 
 
 }

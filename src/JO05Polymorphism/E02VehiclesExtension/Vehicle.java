@@ -2,14 +2,16 @@ package JO05Polymorphism.E02VehiclesExtension;
 
 import java.text.DecimalFormat;
 
-public class Vehicle {
+public abstract class Vehicle {
 
-    protected double fuelQuantity;
-    protected double fuelConsumption;
+    private double fuelQuantity;
+    private double fuelConsumption;
+    private double tankCapacity;
 
-    public Vehicle(double fuelQuantity, double fuelConsumption) {
+    public Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity) {
         this.fuelQuantity = fuelQuantity;
         this.fuelConsumption = fuelConsumption;
+        this.tankCapacity = tankCapacity;
     }
 
     public double getFuelQuantity() {
@@ -28,10 +30,18 @@ public class Vehicle {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public String drive(double distance) {
-        double neededFuel = distance * fuelConsumption;
+    public double getTankCapacity() {
+        return tankCapacity;
+    }
 
-        if (neededFuel > this.fuelQuantity) {
+    public void setTankCapacity(double tankCapacity) {
+        this.tankCapacity = tankCapacity;
+    }
+
+    public String drive(double distance) {
+        double neededFuel = distance * this.getFuelConsumption();
+
+        if (neededFuel > this.getFuelQuantity()) {
             return String.format("%s needs refueling", this.getClass().getSimpleName());
         }
 
