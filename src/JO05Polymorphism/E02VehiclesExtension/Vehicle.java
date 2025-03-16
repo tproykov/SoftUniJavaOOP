@@ -61,7 +61,7 @@ public abstract class Vehicle {
             return;
         }
         else if (this.getFuelQuantity() + fuelToRefill > this.getTankCapacity()) {
-            System.out.println("Cannot fill fuel in tank");
+            System.out.println("Cannot fit fuel in tank");
             return;
         }
 
