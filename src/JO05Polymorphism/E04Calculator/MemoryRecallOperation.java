@@ -1,6 +1,8 @@
 package JO05Polymorphism.E04Calculator;
 
 public class MemoryRecallOperation implements Operation {
+    private boolean completed;
+    private int result;
 
     @Override
     public void addOperand(int operand) {
@@ -8,7 +10,11 @@ public class MemoryRecallOperation implements Operation {
 
     @Override
     public int getResult() {
-        return MemorySaveOperation.recallMemory();
+        if (!completed) {
+            result = MemorySaveOperation.recallMemory();
+            completed = true;
+        }
+        return result;
     }
 
     @Override

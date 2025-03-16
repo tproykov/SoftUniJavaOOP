@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DivideOperation implements Operation {
-
     private List<Integer> operands;
     private int result;
 
