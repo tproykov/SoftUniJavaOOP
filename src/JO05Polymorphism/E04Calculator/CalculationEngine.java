@@ -1,15 +1,17 @@
 package JO05Polymorphism.E04Calculator;
 
 public class CalculationEngine {
+
     private int result;
     private Operation currentOperation;
 
-    public CalculationEngine(){
+    public CalculationEngine() {
         this.result = 0;
         this.currentOperation = null;
     }
 
     public void pushNumber(int number) {
+
         if (this.currentOperation != null) {
             currentOperation.addOperand(number);
 
