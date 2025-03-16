@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MultiplicationOperation implements Operation {
+
     private List<Integer> operands;
     private int result;
 

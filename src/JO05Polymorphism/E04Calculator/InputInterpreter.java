@@ -1,6 +1,7 @@
 package JO05Polymorphism.E04Calculator;
 
 public class InputInterpreter {
+
     private CalculationEngine engine;
 
     public InputInterpreter(CalculationEngine engine){
@@ -15,6 +16,7 @@ public class InputInterpreter {
         }
         return true;
     }
+
     public Operation getOperation(String operation) {
         if (operation.equals("*")) {
             return new MultiplicationOperation();
