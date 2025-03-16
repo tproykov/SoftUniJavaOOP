@@ -4,8 +4,8 @@ import java.text.DecimalFormat;
 
 public class Vehicle {
 
-    double fuelQuantity;
-    double fuelConsumption;
+    protected double fuelQuantity;
+    protected double fuelConsumption;
 
     public Vehicle(double fuelQuantity, double fuelConsumption) {
         this.fuelQuantity = fuelQuantity;
@@ -42,5 +42,10 @@ public class Vehicle {
 
     public void refuel(double liters) {
         this.fuelQuantity += liters;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s: %.2f", this.getClass().getSimpleName(), this.fuelQuantity);
     }
 }
