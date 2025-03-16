@@ -11,7 +11,7 @@ public class ExtensionInputInterpreter extends InputInterpreter {
     public Operation getOperation(String operation) {
 
         return switch (operation) {
-            case "/" -> new DivisionOperation();
+            case "/" -> new DivideOperation();
             case "mr" -> new MemoryRecallOperation();
             case "ms" -> new MemorySaveOperation();
             default -> super.getOperation(operation);

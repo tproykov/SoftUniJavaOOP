@@ -3,12 +3,12 @@ package JO05Polymorphism.E04Calculator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiplicationOperation implements Operation {
+public class DivideOperation implements Operation {
 
     private List<Integer> operands;
     private int result;
 
-    public MultiplicationOperation(){
+    public DivideOperation() {
         this.operands = new ArrayList<>();
     }
 
@@ -17,7 +17,7 @@ public class MultiplicationOperation implements Operation {
         this.operands.add(operand);
 
         if (isCompleted()) {
-            this.result = this.operands.get(0) * this.operands.get(1);
+            this.result = this.operands.get(0) / this.operands.get(1);
         }
     }
 
