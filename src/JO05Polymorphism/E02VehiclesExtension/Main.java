@@ -10,50 +10,52 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        String[] tokens = scanner.nextLine().split("\\s+");
-        Vehicle car = createVehicle(tokens);
+        String[] carDetails = scanner.nextLine().split("\\s+");
+        String[] truckDetails = scanner.nextLine().split("\\s+");
+        String[] busDetails = scanner.nextLine().split("\\s+");
 
-        tokens = scanner.nextLine().split("\\s+");
-        Vehicle truck = createVehicle(tokens);
+        double carFuelQuantity = Double.parseDouble(carDetails[1]);
+        double carFuelConsumption = Double.parseDouble(carDetails[2]);
+        double carTankCapacity = Double.parseDouble(carDetails[3]);
 
-        Map<String, Vehicle> vehicles = new LinkedHashMap<>();
-        vehicles.put("Car", car);
-        vehicles.put("Truck", truck);
+        double truckFuelQuantity = Double.parseDouble(truckDetails[1]);
+        double truckFuelConsumption = Double.parseDouble(truckDetails[2]);
+        double truckTankCapacity = Double.parseDouble(truckDetails[3]);
+
+        double busFuelQuantity = Double.parseDouble(busDetails[1]);
+        double busFuelConsumption = Double.parseDouble(busDetails[2]);
+        double busTankCapacity = Double.parseDouble(busDetails[3]);
+
+        Car car = new Car(carFuelQuantity, carFuelConsumption, carTankCapacity);
+        Truck truck = new Truck(truckFuelQuantity, truckFuelConsumption, truckTankCapacity);
+        Bus bus = new Bus(busFuelQuantity, busFuelConsumption, busTankCapacity);
 
         int n = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < n; i++) {
 
-            tokens = scanner.nextLine().split("\\s+");
-            String command = tokens[0];
-            String vehicleType = tokens[1];
+            String[] commandParts = scanner.nextLine().split("\\s+");
+            String commandName = commandParts[0];
+            String vehicleType = commandParts[1];
+            double fuelQuantityOrDistance = Double.parseDouble(commandParts[2]);
 
-            switch (command) {
+            switch (commandName) {
                 case "Drive" -> {
-                    double distance = Double.parseDouble(tokens[2]);
-                    String driveMessage = vehicles.get(vehicleType).drive(distance);
-                    System.out.println(driveMessage);
+                    switch (vehicleType) {
+                        case "Car" -> System.out.println(car.drive(fuelQuantityOrDistance));
+                        case "Truck" -> System.out.println(truck.drive(fuelQuantityOrDistance));
+                        case "Bus" -> System.out.println(bus.drive(fuelQuantityOrDistance));
+                    }
                 }
+                case "DriveEmpty" -> System.out.println(bus.driveEmpty(fuelQuantityOrDistance));
                 case "Refuel" -> {
-                    double fuelAmount = Double.parseDouble(tokens[2]);
-                    vehicles.get(vehicleType).refuel(fuelAmount);
+                    switch (vehicleType) {
+                        case "Car" -> car.refuel(fuelQuantityOrDistance);
+                        case "Truck" -> truck.refuel(fuelQuantityOrDistance);
+                        case "Bus" -> bus.refuel(fuelQuantityOrDistance);
+                    }
                 }
             }
         }
-
-        vehicles.values().forEach(System.out::println);
-    }
-
-    private static Vehicle createVehicle(String[] tokens) {
-        String vehicleType = tokens[0];
-        double fuelQuantity = Double.parseDouble(tokens[1]);
-        double fuelConsumption = Double.parseDouble(tokens[2]);
-
-        Vehicle vehicle = null;
-        switch (vehicleType) {
-            case "Car" -> vehicle = new Car(fuelQuantity, fuelConsumption);
-            case "Truck" -> vehicle = new Truck(fuelQuantity, fuelConsumption);
-        }
-        return vehicle;
     }
 }

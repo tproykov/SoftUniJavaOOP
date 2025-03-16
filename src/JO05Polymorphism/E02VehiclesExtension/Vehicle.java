@@ -38,20 +38,34 @@ public abstract class Vehicle {
         this.tankCapacity = tankCapacity;
     }
 
-    public String drive(double distance) {
-        double neededFuel = distance * this.getFuelConsumption();
+    public String drive(double distanceToDrive) {
+        String message;
+        double requiredFuel = distanceToDrive * this.getFuelConsumption();
 
-        if (neededFuel > this.getFuelQuantity()) {
-            return String.format("%s needs refueling", this.getClass().getSimpleName());
+        if (requiredFuel <= this.getFuelQuantity()) {
+            DecimalFormat decimalFormat = new DecimalFormat("##.##");
+            message = String.format("%s travelled %s km", this.getClass().getSimpleName(),
+                    decimalFormat.format(distanceToDrive));
+            this.fuelQuantity = this.fuelQuantity - requiredFuel;
+        }
+        else {
+            message = "%s needs refueling".formatted(this.getClass().getSimpleName());
         }
 
-        this.fuelQuantity = this.fuelQuantity - neededFuel;
-        DecimalFormat df = new DecimalFormat("##.##");
-        return String.format("%s travelled %s km", this.getClass().getSimpleName(), df.format(distance));
+        return message;
     }
 
-    public void refuel(double liters) {
-        this.fuelQuantity += liters;
+    public void refuel(double fuelToRefill) {
+        if (fuelToRefill <= 0) {
+            System.out.println("Fuel must be a positive number");
+            return;
+        }
+        else if (this.getFuelQuantity() + fuelToRefill > this.getTankCapacity()) {
+            System.out.println("Cannot fill fuel in tank");
+            return;
+        }
+
+        this.setFuelQuantity(this.getFuelQuantity() + fuelToRefill);
     }
 
     @Override
