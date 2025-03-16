@@ -5,11 +5,7 @@ import java.util.Deque;
 
 public class MemorySaveOperation implements Operation {
 
-    private Deque<Integer> memory;
-
-    public MemorySaveOperation() {
-        this.memory = new ArrayDeque<>();
-    }
+    private static final Deque<Integer> memory = new ArrayDeque<>();
 
     @Override
     public void addOperand(int operand) {
@@ -18,11 +14,19 @@ public class MemorySaveOperation implements Operation {
 
     @Override
     public int getResult() {
-        return memory.pop();
+        return memory.peek();
     }
 
     @Override
     public boolean isCompleted() {
-        return false;
+        return true;
+    }
+
+    public static Integer recallMemory() {
+        if (memory.isEmpty()) {
+            return 0;
+        }
+
+        return memory.pop();
     }
 }

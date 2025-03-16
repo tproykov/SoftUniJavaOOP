@@ -10,12 +10,11 @@ public class MemoryRecallOperation implements Operation {
 
     @Override
     public int getResult() {
-        return 0;
+        return MemorySaveOperation.recallMemory();
     }
 
     @Override
     public boolean isCompleted() {
-        return false;
+        return true;
     }
-
 }
