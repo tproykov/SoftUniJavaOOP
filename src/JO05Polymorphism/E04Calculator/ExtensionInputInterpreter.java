@@ -2,8 +2,7 @@ package JO05Polymorphism.E04Calculator;
 
 public class ExtensionInputInterpreter extends InputInterpreter {
 
-    private MemorySaveOperation memorySaveOperation;
-    private MemorySaveOperation MemorySaveOperation;
+    private final MemorySaveOperation memorySaveOperation;
 
     public ExtensionInputInterpreter(CalculationEngine engine) {
         super(engine);
@@ -16,7 +15,7 @@ public class ExtensionInputInterpreter extends InputInterpreter {
         return switch (operation) {
             case "/" -> new DivideOperation();
             case "mr" -> new MemoryRecallOperation();
-            case "ms" -> this.MemorySaveOperation;
+            case "ms" -> this.memorySaveOperation;
             default -> super.getOperation(operation);
         };
     }
