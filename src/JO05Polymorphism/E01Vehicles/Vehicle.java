@@ -39,4 +39,8 @@ public class Vehicle {
         DecimalFormat df = new DecimalFormat("##.##");
         return String.format("%s travelled %s km", this.getClass().getSimpleName(), df.format(distance));
     }
+
+    public void refuel(double liters) {
+        this.fuelQuantity += liters;
+    }
 }
