@@ -6,16 +6,16 @@ public class Main {
 
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 
-        Class reflectionClass = Reflection.class;
+        Class<Reflection> reflectionClass = Reflection.class;
 
         System.out.println(reflectionClass.getSimpleName());
         System.out.println(reflectionClass.getSuperclass());
 
-        for (Class interfaceClass : reflectionClass.getInterfaces()) {
+        for (Class<?> interfaceClass : reflectionClass.getInterfaces()) {
             System.out.println(interfaceClass.getSimpleName());
         }
 
-        Object object = (Reflection) reflectionClass.getDeclaredConstructor().newInstance();
+        Object object = reflectionClass.getDeclaredConstructor().newInstance();
         System.out.println(object);
     }
 }

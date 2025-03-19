@@ -1,7 +1,5 @@
 package JO07ReflectionAndAnnotation.L02GettersandSetters;
 
-import JO07ReflectionAndAnnotation.L01Reflection.Reflection;
-
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
