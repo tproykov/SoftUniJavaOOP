@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Class reflectionClass = Reflection.class;
+        Class<Reflection> reflectionClass = Reflection.class;
 
         Method[] allMethods = reflectionClass.getDeclaredMethods();
 
@@ -18,19 +18,10 @@ public class Main {
 
         for (Method method : allMethods) {
             if (method.getName().startsWith("set")) {
-                Class[] parameterTypes = method.getParameterTypes();
+                Class<?>[] parameterTypes = method.getParameterTypes();
                 System.out.printf("%s and will set field of class %s\n", method.getName(),
                         parameterTypes[0].getSimpleName());
             }
         }
-
-
-
-
-
-
-
-
-
     }
 }
