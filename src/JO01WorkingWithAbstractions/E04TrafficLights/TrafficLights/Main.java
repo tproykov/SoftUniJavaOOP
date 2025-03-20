@@ -1,4 +1,4 @@
-
+package JO01WorkingWithAbstractions.E04TrafficLights.TrafficLights;
 
 import java.util.Arrays;
 import java.util.Scanner;
