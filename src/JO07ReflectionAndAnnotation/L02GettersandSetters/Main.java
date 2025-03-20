@@ -2,26 +2,58 @@ package JO07ReflectionAndAnnotation.L02GettersandSetters;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Class<Reflection> reflectionClass = Reflection.class;
+        Class<?> reflectionClass = Reflection.class;
 
         Method[] allMethods = reflectionClass.getDeclaredMethods();
 
-        Arrays.stream(allMethods)
-                .filter(method -> method.getName().startsWith("get"))
-                .forEach(getter -> System.out.printf("%s will return class %s\n",
-                        getter.getName(), getter.getReturnType().getSimpleName()));
+        Method[] getters = Arrays.stream(allMethods)
+                .filter(Main::isGetter)
+                .sorted(Comparator.comparing(Method::getName))
+                .toArray(Method[]::new);
 
-        for (Method method : allMethods) {
-            if (method.getName().startsWith("set")) {
-                Class<?>[] parameterTypes = method.getParameterTypes();
-                System.out.printf("%s and will set field of class %s\n", method.getName(),
-                        parameterTypes[0].getSimpleName());
-            }
+        Method[] setters = Arrays.stream(allMethods)
+                .filter(Main::isSetter)
+                .sorted(Comparator.comparing(Method::getName))
+                .toArray(Method[]::new);
+
+        for (Method getter : getters) {
+            System.out.println(getter.getName() + " will return class " + getter.getReturnType().getName());
         }
+
+        for (Method setter : setters) {
+            System.out.println(setter.getName() + " and will set field of class " +
+                    setter.getParameterTypes()[0].getName());
+        }
+    }
+
+    private static boolean isGetter(Method method) {
+        // Getter must start with "get" or "is" (for boolean), have no parameters, and return something
+        if (method.getParameterCount() > 0) {
+            return false;
+        }
+
+        if (method.getReturnType().equals(void.class)) {
+            return false;
+        }
+
+        String methodName = method.getName();
+        return (methodName.startsWith("get") && methodName.length() > 3) ||
+                (methodName.startsWith("is") && methodName.length() > 2);
+    }
+
+    private static boolean isSetter(Method method) {
+
+        if (method.getParameterCount() != 1) {
+            return false;
+        }
+
+        String methodName = method.getName();
+        return methodName.startsWith("set") && methodName.length() > 3;
     }
 }
