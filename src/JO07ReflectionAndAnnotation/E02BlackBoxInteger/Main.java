@@ -1,9 +1,7 @@
-package JO07ReflectionAndAnnotation.E02BlackBoxInteger;
+package blackBoxInteger;
 
 public class Main {
-
     public static void main(String[] args) {
-
 
     }
 }
