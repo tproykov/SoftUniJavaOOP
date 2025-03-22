@@ -1,4 +1,4 @@
-package blackBoxInteger;
+package JO07ReflectionAndAnnotation.E02BlackBoxInteger;
 
 public class BlackBoxInt {
 
