@@ -1,6 +1,9 @@
-package JO04InterfacesAndAbstraction.E06MilitaryElite;
+package JO04InterfacesAndAbstraction.E06MilitaryElite.soldier.impl;
 
-class SoldierImpl implements Soldier {
+import JO04InterfacesAndAbstraction.E06MilitaryElite.soldier.Soldier;
+
+public class SoldierImpl implements Soldier {
+
     private int id;
     private String firstName;
     private String lastName;
@@ -13,16 +16,16 @@ class SoldierImpl implements Soldier {
 
     @Override
     public int getId() {
-        return id;
+        return this.id;
     }
 
     @Override
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     @Override
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 }
